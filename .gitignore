@@ -1,0 +1,11 @@
+.DS_Store
+*.swp
+*.xml
+*.log
+*.owl
+*.rdf
+*.nt
+*.db
+*~
+*.gz
+material_DAT/
