@@ -1,0 +1,6 @@
+;; file of .gitignore
+
+.DS_Store
+*~
+result_DAT/**/*
+material_DAT/**/*
