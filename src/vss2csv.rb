@@ -2,7 +2,7 @@
 require 'find'
 require 'pp'
 
-root = "../material_DAT/BindingSiteDat"
+root = "../material_DAT/BindingSiteDat/VSS"
 find_entries = Array.new
 Find.find(root) do |path|
 	find_entries.push(path)
