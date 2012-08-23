@@ -8,4 +8,6 @@
 *.db
 *~
 *.gz
+*.bz2
 material_DAT/
+*.out
