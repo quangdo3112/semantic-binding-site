@@ -10,4 +10,8 @@
 *.gz
 *.bz2
 material_DAT/
+result_DAT/
 *.out
+*.csv
+*.swn
+*.swo
