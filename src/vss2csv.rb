@@ -1,4 +1,7 @@
 #! /usr/bin/ruby -Ku
+#
+# vss2csv is a converting tool from VSS to CSV.
+#
 require 'find'
 require 'pp'
 
