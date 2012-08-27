@@ -48,7 +48,7 @@ for $i in 1..$size do
 		pdbid = $filename[35..38]
 		print pdbid, ","
 		puts methodname
- 		f3.puts pdbid , "," , methodname
+ 		f3.print pdbid , "," , methodname, "\n"
 	end
 end
 

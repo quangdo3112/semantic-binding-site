@@ -1,11 +1,13 @@
-#! /usr/bin/ruby -Ku
+#! /usr/bin/ruby
+# -*- coding: utf-8 -*-
 #
 # vss2csv is a converting tool from VSS to CSV.
 #
 require 'find'
 require 'pp'
+require 'iconv'
 
-root = "../material_DAT/BindingSiteDat/VSS"
+root = "../material_DAT/BindingSiteDat/VSS/X-RAY"
 find_entries = Array.new
 Find.find(root) do |path|
 	find_entries.push(path)
@@ -24,6 +26,7 @@ for $i in 1..$size do
 	$pmid = ""
 
 	IO.foreach($filename) do |s|
+		s = Iconv.iconv('UTF-8//IGNORE', 'UTF-8', s).first 
 		if $cnt == 2 then
 			$pmid = s[16..19]
 			$pmid.upcase!
@@ -34,13 +37,13 @@ for $i in 1..$size do
 			header = s.sub!("Header", "PMID")
 			p header
 #			f.puts header
-		end
+		end			
 #=begin
 		if $cnt >= 6 then
 			s[0, 1] = ""
 			s.chop!.chop!
+			s.gsub!("", "")
 			s.gsub!("\$", ",")
-
 			s.sub!("Alanine", "ALA")
 			s.sub!("Cysteine", "CYS")
 			s.sub!("Aspartic Acid", "ASP")
