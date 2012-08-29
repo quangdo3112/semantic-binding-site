@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 use warnings;
 use strict;
-my $file_name = "../result_DAT/chem_comp.nt"; # ３Ｍを越えるテキスト
+my $file_name = "../result_DAT/PDBrdf.nt";
 my $in; my $out;
 my $cnt=0; my $file_cnt=0;
 my $i=0;
@@ -13,7 +13,7 @@ for($i=0, $i<=$file_cnt, $i++){
   while(my $line = readline $in){
    chomp($line);
     if($cnt<1000000){
-      my $out_file ="../result_DAT/nt2/chem_comp_DATA_part$file_cnt.nt";
+      my $out_file ="../result_DAT/pdb_nt/PDBrdf_DATA_part$file_cnt.nt";
       open($out, ">>", $out_file);
       print "$out_file,$cnt,$line\n";
       print $out "$line\n";
@@ -21,7 +21,7 @@ for($i=0, $i<=$file_cnt, $i++){
     elsif($cnt=1000000){
      $cnt=0;
       $file_cnt++;
-      my $out_file ="../result_DAT/nt2/chem_comp_DATA_part$file_cnt.nt";
+      my $out_file ="../result_DAT/nt2/PDBrdf_DATA_part$file_cnt.nt";
       open($out, ">>", $out_file);
       print "$out_file\n";
       print "$out_file,$cnt,$line\n";
