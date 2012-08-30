@@ -15,16 +15,16 @@ for($i=0, $i<=$file_cnt, $i++){
     if($cnt<1000000){
       my $out_file ="../result_DAT/pdb_nt/PDBrdf_DATA_part$file_cnt.nt";
       open($out, ">>", $out_file);
-      print "$out_file,$cnt,$line\n";
+#      print "$out_file,$cnt,$line\n";
       print $out "$line\n";
     }
     elsif($cnt=1000000){
      $cnt=0;
       $file_cnt++;
-      my $out_file ="../result_DAT/nt2/PDBrdf_DATA_part$file_cnt.nt";
+      my $out_file ="../result_DAT/pdb_nt/PDBrdf_DATA_part$file_cnt.nt";
       open($out, ">>", $out_file);
-      print "$out_file\n";
-      print "$out_file,$cnt,$line\n";
+#      print "$out_file\n";
+#      print "$out_file,$cnt,$line\n";
       print $out "$line\n";
    }
     $cnt++;
